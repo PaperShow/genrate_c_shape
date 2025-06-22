@@ -1,22 +1,22 @@
 import 'dart:math';
 
+import 'package:aeria_assignment/core/constant/constants.dart';
 import 'package:flutter/material.dart';
 
-class CShapeBoxes extends StatefulWidget {
-  const CShapeBoxes({super.key});
+class CShapeBoxPage extends StatefulWidget {
+  const CShapeBoxPage({super.key});
 
   @override
-  State<CShapeBoxes> createState() => _CShapeBoxesState();
+  State<CShapeBoxPage> createState() => _CShapeBoxPageState();
 }
 
-class _CShapeBoxesState extends State<CShapeBoxes>
+class _CShapeBoxPageState extends State<CShapeBoxPage>
     with TickerProviderStateMixin {
   final TextEditingController _controller = TextEditingController();
 
   int n = 0;
 
   List<Color> boxColors = [];
-
   List<int> greenOrder = [];
 
   bool isAnimating = false;
@@ -43,7 +43,7 @@ class _CShapeBoxesState extends State<CShapeBoxes>
 
     setState(() {
       n = count;
-      boxColors = List.generate(n, (_) => Colors.red);
+      boxColors = List.generate(n, (_) => redColor);
       greenOrder.clear();
       isAnimating = false;
 
@@ -59,18 +59,18 @@ class _CShapeBoxesState extends State<CShapeBoxes>
       // Create color animations for each box
       _colorAnimations = _animationControllers.map((controller) {
         return ColorTween(
-          begin: Colors.red,
-          end: Colors.green,
+          begin: redColor,
+          end: greenColor,
         ).animate(CurvedAnimation(parent: controller, curve: Curves.easeInOut));
       }).toList();
     });
   }
 
   void onBoxTap(int index) {
-    if (isAnimating || boxColors[index] == Colors.green) return;
+    if (isAnimating || boxColors[index] == greenColor) return;
 
     setState(() {
-      boxColors[index] = Colors.green;
+      boxColors[index] = greenColor;
       greenOrder.add(index);
     });
 
@@ -93,7 +93,7 @@ class _CShapeBoxesState extends State<CShapeBoxes>
       _animationControllers[boxIndex].reverse();
 
       setState(() {
-        boxColors[boxIndex] = Colors.red;
+        boxColors[boxIndex] = redColor;
       });
     }
 
@@ -153,7 +153,7 @@ class _CShapeBoxesState extends State<CShapeBoxes>
         margin: EdgeInsets.all(4),
         width: width,
         height: width,
-        color: Colors.red,
+        color: redColor,
       );
     }
 
@@ -175,9 +175,7 @@ class _CShapeBoxesState extends State<CShapeBoxes>
 
             child: AnimatedOpacity(
               duration: Duration(milliseconds: 100),
-              opacity: isAnimating && boxColors[index] == Colors.red
-                  ? 0.7
-                  : 1.0,
+              opacity: isAnimating && boxColors[index] == redColor ? 0.7 : 1.0,
               child: Container(),
             ),
           );
@@ -189,11 +187,7 @@ class _CShapeBoxesState extends State<CShapeBoxes>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("C-Shape Boxes"),
-        backgroundColor: Colors.blue.shade600,
-        foregroundColor: Colors.white,
-      ),
+      appBar: AppBar(title: Text("C-Shape Boxes")),
       body: Column(
         children: [
           Container(

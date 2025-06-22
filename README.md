@@ -1,5 +1,11 @@
 # 🟥 Flutter C-Shape Animated Box App
 
+## Version
+ - Flutter 3.32.1 • channel stable • https://github.com/flutter/flutter.git
+ - Framework • revision b25305a883 (3 weeks ago) • 2025-05-29 10:40:06 -0700
+ - Engine • revision 1425e5e9ec (3 weeks ago) • 2025-05-28 14:26:27 -0700
+ - Tools • Dart 3.8.1 • DevTools 2.45.1
+
 This Flutter app allows users to input a number between **5 and 25** to dynamically generate square boxes arranged in a **‘C’ shaped layout**. It includes **color animations**, **tap interactions**, and a **reverse animation** sequence once all boxes are turned green.
 
 ---
@@ -27,7 +33,7 @@ Given `N` boxes:
 
 This forms a visual structure like:
 
-### For N = 9:
+### For N = 8:
 
  - 🟥🟥🟥
  - 🟥

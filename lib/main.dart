@@ -1,4 +1,4 @@
-import 'package:aeria_assignment/feature/home_page.dart';
+import 'package:aeria_assignment/presentation/screens/box_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,8 +15,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.blue.shade600,
+          foregroundColor: Colors.white,
+        ),
       ),
-      home: CShapeBoxes(),
+      home: CShapeBoxPage(),
     );
   }
 }
