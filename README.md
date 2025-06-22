@@ -43,16 +43,16 @@ This forms a visual structure like:
 
 ---
 
-## ⚙️ How Animation Works
+##  How Animation Works
 
-### 📦 Initialization
+###  Initialization
 
 Each box is initialized with:
 
 - Color: `Colors.red`
 - Animation: A `ColorTween` from red to green using a dedicated `AnimationController`.
 
-### 👆 On Tap
+###  On Tap
 
 When a box is tapped:
 
@@ -60,7 +60,7 @@ When a box is tapped:
   - The color transitions to green using the animation controller.
   - Its index is added to a list called `greenOrder` to record the tap sequence.
 
-### 🔁 Reverse Animation
+###  Reverse Animation
 
 Once all `N` boxes are green:
 
