@@ -4,20 +4,20 @@ This Flutter app allows users to input a number between **5 and 25** to dynamica
 
 ---
 
-## 🚀 Features
+## Features
 
-- 📥 **Dynamic Input**: User provides a number (5–25) to generate that many boxes.
-- 🧱 **C-Shape Layout**: Boxes are arranged in a way that mimics the shape of the letter ‘C’.
-- 🖐️ **Tap Interaction**: Tapping a box toggles it from red to green, tracking the order.
-- ⏱ **Reverse Animation**:
+-  **Dynamic Input**: User provides a number (5–25) to generate that many boxes.
+-  **C-Shape Layout**: Boxes are arranged in a way that mimics the shape of the letter ‘C’.
+-  **Tap Interaction**: Tapping a box toggles it from red to green, tracking the order.
+-  **Reverse Animation**:
   - Automatically starts once all boxes are green.
   - Turns boxes back to red in **reverse tap order**, one per second.
-- 🎨 **Smooth Animations**:
+-  **Smooth Animations**:
   - Color transitions between red and green are animated using `AnimationController` and `ColorTween`.
 
 ---
 
-## 🖼️ Layout Behavior – How the 'C' Shape is Formed
+##  Layout Behavior – How the 'C' Shape is Formed
 
 Given `N` boxes:
 - The boxes are split roughly into **3 parts**:
@@ -29,10 +29,10 @@ This forms a visual structure like:
 
 ### For N = 9:
 
-🟥 🟥 🟥
+🟥🟥🟥
 🟥
 🟥
-🟥 🟥 🟥
+🟥🟥🟥
 
 
 ---
